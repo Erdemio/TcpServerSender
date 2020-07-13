@@ -9,8 +9,6 @@ let localIP;
 io.on('connection', (socket) => {
 
   socket.on('io', (dt) => {
-  //  console.log(dt.command);
-
 
     if (dt.command == "connect") {
       console.log(dt.ip);
@@ -55,8 +53,6 @@ io.on('connection', (socket) => {
 
 function disconnect(){
   console.log("Disconnected from " + localIP);
-  if(serverSocket!=null){
+  if(serverSocket!=null)
     serverSocket.end();
-  }
-
 }

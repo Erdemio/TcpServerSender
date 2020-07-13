@@ -6,6 +6,7 @@ connectedSockets.broadcast = function(data, except) {
         if (sock !== except)
               sock.write(data.toString());
 }
+
 const server = net.createServer((c) => {
   // 'connection' listener.
   console.log('client connected');
