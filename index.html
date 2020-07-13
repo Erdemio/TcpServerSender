@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Manager</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+    <div class="container"><a class="navbar-brand" href="#">Titconn Test Yazılımı</a></div>
+  </nav>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">IP adresi:</label><input class="border rounded border-warning shadow-sm form-control-sm" type="text" name="ip" id="ip" placeholder="ip adresi"
+              autocomplete="off" style="padding: 16px;" value="127.0.0.1">
+            <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 10px;"><button class="btn btn-outline-success" type="button" id="connect">Bağlan</button><button class="btn btn-outline-danger" type="button" id="disconnect" disabled>Bağlantıyı
+                Kes</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="testScreen" class="d-none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">1.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,0,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,0,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,0,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,0,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,0,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,0,0;~')">Söndür</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">2.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,1,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,1,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,1,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,1,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,1,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,1,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">3.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,2,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,2,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,2,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,2,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,2,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,2,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">4.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,3,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,3,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,3,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,3,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,3,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,3,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">5.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,4,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,4,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,4,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,4,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,4,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,4,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">6.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,5,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,5,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,5,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,5,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,5,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,5,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">7.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,6,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,6,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,6,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,6,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,6,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,6,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">8.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,7,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,7,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,7,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,7,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,7,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,7,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">9.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,8,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,8,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,8,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,8,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,8,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,8,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">10.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,9,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,9,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,9,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,9,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,9,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,9,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">11.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,10,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,10,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,10,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,10,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,10,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,10,0;~')">Söndür</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">12.Cihaz</label>
+          <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 0px;">
+            <button class="btn btn-outline-dark" type="button" onClick="emito('C:1,11,15;~')">Tümü</button>
+            <button class="btn btn-outline-danger" type="button" onClick="emito('C:1,11,1;~')">Kırmızı</button>
+            <button class="btn btn-outline-primary" type="button" onClick="emito('C:1,11,2;~')">Mavi</button>
+            <button class="btn btn-outline-warning" type="button" onClick="emito('C:1,11,4;~')">Sarı</button>
+            <button class="btn btn-outline-success" type="button" onClick="emito('C:1,11,8;~')">Yeşil</button>
+            <button class="btn btn-outline-dark" type="button" onClick="emitc('C:1,11,0;~')">Söndür</button>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-xl-12">
+            <div class="form-group"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">Custom line:</label><input class="border rounded border-warning shadow-sm form-control-sm" type="text" name="custom" id="custom" placeholder="Custom protocol"
+                autocomplete="off" style="padding: 16px;" value="C:1,0,15;~">
+              <div class="btn-group btn-group-sm" role="group" style="padding: 10px;padding-left: 10px;"><button class="btn btn-outline-success" type="button" id="send">Send</button></div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </div><!---->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col"><label class="text-monospace" for="ip" style="font-size: 16px;padding-right: 11px;">Konsol:</label>
+            <div class="form-group"><textarea class="form-control-sm" autocomplete="off" name="console1" id="console1" style="height: 350px;width: 100%;"></textarea></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="http://localhost:1234/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io("http://localhost:1234");
+
+    function emito(str) {
+      socket.emit("io", {
+        command: "toggleOpen",
+        line: str
+      });
+    }
+
+    function emitc(str) {
+      socket.emit("io", {
+        command: "toggleOpen",
+        line: str
+      });
+    }
+    $("#send").click(function() {
+      socket.emit("io", {
+        command: "singleCommand",
+        line: $("#custom").val()
+      });
+      $("#connect").prop("disabled", true);
+      $("#disconnect").prop("disabled", false);
+    });
+    $("#connect").click(function() {
+      socket.emit("io", {
+        command: "connect",
+        ip: $("#ip").val()
+      });
+      $("#connect").prop("disabled", true);
+      $("#disconnect").prop("disabled", false);
+    });
+    $("#disconnect").click(function() {
+      socket.emit("io", {
+        command: "disconnect",
+        ip: $("#ip").val()
+      });
+      $("#disconnect").prop("disabled", true);
+      $("#connect").prop("disabled", false);
+      $("#testScreen").addClass("d-none");
+    });
+
+    socket.on("message", (text) => {
+
+      if (text == "connected") {
+        document.getElementById("console1").value = "Bağlantı kuruldu." + "\r\n" + document.getElementById("console1").value;
+        $("#connect").prop("disabled", true);
+        $("#disconnect").prop("disabled", false);
+        $("#testScreen").removeClass("d-none");
+
+      }else if (text == "disconnected") {
+        document.getElementById("console1").value = "Bağlantı kesildi." + "\r\n" + document.getElementById("console1").value;
+        $("#connect").prop("disabled", false);
+        $("#disconnect").prop("disabled", true);
+        $("#testScreen").addClass("d-none");
+
+      } else if (text == "connectionProblem") {
+        document.getElementById("console1").value = "Bağlantı koptu." + "\r\n" + document.getElementById("console1").value;
+        $("#connect").prop("disabled", false);
+        $("#disconnect").prop("disabled", true);
+        $("#testScreen").addClass("d-none");
+      }else {
+        document.getElementById("console1").value = text + "\r\n" + document.getElementById("console1").value;
+      }
+    });
+  </script>
+</body>
+</html>
