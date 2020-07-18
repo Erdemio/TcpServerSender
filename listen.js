@@ -22,14 +22,6 @@ io.on('connection', (socket) => {
       socket.emit("message","connected");
       console.log("Listening " + localIP);
       const server = net.createServer((c) => { connectedSockets.add(c); console.log('client connected');
-
-      //clientlere gönder   connectedSockets.broadcast(mesaj, c);
-
-        /*c.on('data', data => {
-          console.log("[Received]: "+data.toString());
-          connectedSockets.broadcast(data, c);
-        });*/
-
           c.on('end', () => {  console.log('client disconnected');  connectedSockets.delete(c); });
       });
 
